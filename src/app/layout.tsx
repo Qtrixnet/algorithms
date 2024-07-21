@@ -3,11 +3,10 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { ReactElement, ReactNode } from 'react'
 
+import { Footer } from '@/modules/Core/components/Footer'
 import { Header } from '@/modules/Core/components/Header'
 
 import './globals.css'
-
-import { Footer } from '@/modules/Core/components/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,7 +15,18 @@ export const metadata: Metadata = {
   description: 'Визуализирует работу алгоритмов сортировки',
 }
 
-const bodyClassName = cx(inter.className, 'bg-black text-white')
+const bodyClassName = cx(
+  inter.className,
+  // Блочная модель
+  'flex flex-col min-h-dvh',
+  // Оформление
+  'bg-black text-white',
+)
+
+const mainClassName = cx(
+  // Блочная модель
+  'grow',
+)
 
 const RootLayout = ({
   children,
@@ -27,7 +37,7 @@ const RootLayout = ({
     <html lang='ru'>
       <body className={bodyClassName}>
         <Header />
-        {children}
+        <main className={mainClassName}>{children}</main>
         <Footer />
       </body>
     </html>

@@ -1,7 +1,7 @@
 import { ReactElement } from 'react'
 
 const Home = (): ReactElement => {
-  return <main>Home</main>
+  return <section>Home</section>
 }
 
 export default Home
