@@ -1,3 +1,174 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "@feature-sliced",
+    "prettier"
+  ],
+  "env": {
+    "browser": true,
+    "jest": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "globals": {
+    "window": true,
+    "document": true,
+    "jest": true
+  },
+  "plugins": [
+    "@typescript-eslint",
+    "typescript-sort-keys",
+    "react",
+    "react-hooks",
+    "import",
+    "unused-imports",
+    "jest",
+    "prettier"
+  ],
+  "rules": {
+    "@typescript-eslint/ban-ts-comment": "off",
+    "unused-imports/no-unused-imports": "error",
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ],
+    "linebreak-style": "off",
+    "max-len": [
+      2,
+      {
+        "ignoreComments": true,
+        "ignoreUrls": true,
+        "code": 120
+      }
+    ],
+    "object-curly-spacing": ["error", "always"],
+    "react/jsx-curly-spacing": [
+      "error",
+      {
+        "when": "never"
+      }
+    ],
+    "react/jsx-curly-brace-presence": [
+      "error",
+      {
+        "props": "never",
+        "children": "never"
+      }
+    ],
+    "react/jsx-indent-props": ["error", 2],
+    "react/jsx-sort-props": "warn",
+    "react-hooks/rules-of-hooks": "error",
+    "react/jsx-key": "error",
+    "jsx-a11y/media-has-caption": "warn",
+    "jsx-quotes": ["error", "prefer-single"],
+    "react/react-in-jsx-scope": "off",
+    "import/no-extraneous-dependencies": "error",
+    "import/no-named-as-default-member": "error",
+    "import/no-named-as-default": "error",
+    "import/no-internal-modules": "off",
+    "import/order": [
+      "error",
+      {
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        },
+        "pathGroupsExcludedImportTypes": ["builtin"],
+        "newlines-between": "always",
+        "warnOnUnassignedImports": true,
+        "groups": ["builtin", "external", "internal", "parent", "sibling", "index"],
+        "pathGroups": [
+          {
+            "pattern": "**/?(*)app{,/**}",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "**/?(*)processes{,/**}",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "**/?(*)screens{,/**}",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "**/?(*)widgets{,/**}",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "**/?(*)features{,/**}",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "**/?(*)entities{,/**}",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "**/?(*)shared{,/**}",
+            "group": "internal",
+            "position": "after"
+          }
+        ]
+      }
+    ],
+    "no-restricted-imports": [
+      "error",
+      {
+        "paths": [
+          {
+            "name": "@jest/globals",
+            "message": "Use global expect function instead"
+          }
+        ]
+      }
+    ],
+    "@typescript-eslint/array-type": "error",
+    "@typescript-eslint/explicit-function-return-type": "error",
+    "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/type-annotation-spacing": "error",
+    "typescript-sort-keys/interface": "error",
+    "typescript-sort-keys/string-enum": "error",
+    "semi": "off",
+    "quotes": ["error", "single"]
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true
+      }
+    }
+  },
+  "overrides": [
+    {
+      "files": ["*.test.ts", "*.test.tsx", "setupTests.ts"],
+      "rules": {
+        "jest/no-disabled-tests": "warn",
+        "jest/no-focused-tests": "error",
+        "jest/no-identical-title": "error",
+        "jest/prefer-to-have-length": "warn",
+        "jest/valid-expect": "error",
+        "import/no-extraneous-dependencies": "off"
+      }
+    }
+  ]
 }
