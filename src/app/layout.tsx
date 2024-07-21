@@ -8,6 +8,8 @@ import { Header } from '@/modules/Core/components/Header'
 
 import './globals.css'
 
+import { Navigation } from '@/modules/Core/components/Navigation'
+
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -25,7 +27,7 @@ const bodyClassName = cx(
 
 const mainClassName = cx(
   // Блочная модель
-  'grow flex flex-col',
+  'grow flex',
 )
 
 const RootLayout = ({
@@ -37,7 +39,10 @@ const RootLayout = ({
     <html lang='ru'>
       <body className={bodyClassName}>
         <Header />
-        <main className={mainClassName}>{children}</main>
+        <main className={mainClassName}>
+          <Navigation />
+          {children}
+        </main>
         <Footer />
       </body>
     </html>
