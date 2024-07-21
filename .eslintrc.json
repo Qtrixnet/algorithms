@@ -6,7 +6,6 @@
     "plugin:react-hooks/recommended",
     "plugin:import/errors",
     "plugin:import/warnings",
-    "@feature-sliced",
     "prettier"
   ],
   "env": {
@@ -31,13 +30,11 @@
     "react",
     "react-hooks",
     "import",
-    "unused-imports",
     "jest",
     "prettier"
   ],
   "rules": {
     "@typescript-eslint/ban-ts-comment": "off",
-    "unused-imports/no-unused-imports": "error",
     "prettier/prettier": [
       "error",
       {
