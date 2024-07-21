@@ -1,7 +1,7 @@
 import { ReactElement } from 'react'
 
 const Home = (): ReactElement => {
-  return <main className='flex min-h-screen flex-col items-center justify-between p-24'></main>
+  return <main>Home</main>
 }
 
 export default Home
