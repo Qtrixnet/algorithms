@@ -7,6 +7,8 @@ import { Header } from '@/modules/Core/components/Header'
 
 import './globals.css'
 
+import { Footer } from '@/modules/Core/components/Footer'
+
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -26,6 +28,7 @@ const RootLayout = ({
       <body className={bodyClassName}>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   )

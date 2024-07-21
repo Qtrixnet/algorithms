@@ -10,6 +10,11 @@ const config: Config = {
       'before-desktop': { max: '1439px' },
       desktop: { min: '1440px' },
     },
+    extend: {
+      backgroundImage: {
+        tgIcon: 'url(/icons/telegram.svg)',
+      },
+    },
   },
   plugins: [],
 }
