@@ -24,15 +24,7 @@
     "document": true,
     "jest": true
   },
-  "plugins": [
-    "@typescript-eslint",
-    "typescript-sort-keys",
-    "react",
-    "react-hooks",
-    "import",
-    "jest",
-    "prettier"
-  ],
+  "plugins": ["@typescript-eslint", "typescript-sort-keys", "react", "react-hooks", "import", "jest", "prettier"],
   "rules": {
     "@typescript-eslint/ban-ts-comment": "off",
     "prettier/prettier": [
