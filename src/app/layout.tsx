@@ -25,7 +25,7 @@ const bodyClassName = cx(
 
 const mainClassName = cx(
   // Блочная модель
-  'grow',
+  'grow flex flex-col',
 )
 
 const RootLayout = ({
