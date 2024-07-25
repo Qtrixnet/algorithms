@@ -6,8 +6,14 @@ const homeClassName = cx(
   'm-auto',
 )
 
+const titleClassName = cx('text-5xl')
+
 const Home = (): ReactElement => {
-  return <section className={homeClassName}>Home</section>
+  return (
+    <section className={homeClassName}>
+      <h1 className={titleClassName}>Algorithms</h1>
+    </section>
+  )
 }
 
 export default Home

@@ -3,12 +3,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { ReactElement, ReactNode } from 'react'
 
-import { Footer } from '@/modules/Core/components/Footer'
-import { Header } from '@/modules/Core/components/Header'
-
 import './globals.css'
-
-import { Navigation } from '@/modules/Core/components/Navigation'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -25,11 +20,6 @@ const bodyClassName = cx(
   'bg-black text-white',
 )
 
-const mainClassName = cx(
-  // Блочная модель
-  'grow flex',
-)
-
 const RootLayout = ({
   children,
 }: Readonly<{
@@ -37,14 +27,7 @@ const RootLayout = ({
 }>): ReactElement => {
   return (
     <html lang='ru'>
-      <body className={bodyClassName}>
-        <Header />
-        <main className={mainClassName}>
-          <Navigation />
-          {children}
-        </main>
-        <Footer />
-      </body>
+      <body className={bodyClassName}>{children}</body>
     </html>
   )
 }
