@@ -1,14 +1,13 @@
 interface Params {
-  algorithmName: 'bubble-sort' | 'binary-search'
+  algorithmName: 'bubble-sort' | 'binary-search' | 'selection-sort'
   array: number[]
   time: number
 }
 
 const styles = `
     padding: 8px;
-    margin: 16px 0;
     background-color: white;
-    border-radius: 0px;
+    border-radius: 8px;
     color: black;
     font-size: 18px;
     font-weight: bold;

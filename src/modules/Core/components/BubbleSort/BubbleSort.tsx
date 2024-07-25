@@ -12,10 +12,10 @@ interface Props {
 
 export const BubbleSort = ({ length }: Props): null => {
   useEffect(() => {
+    const array = generateRandomArr(length)
+
     const start = performance.now()
-
-    const result = bubbleSort(generateRandomArr(length))
-
+    const result = bubbleSort(array)
     const end = performance.now()
 
     performanceLogger({
