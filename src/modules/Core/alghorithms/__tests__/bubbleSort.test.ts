@@ -1,6 +1,6 @@
 import { bubbleSort } from '@/modules/Core/alghorithms/bubbleSort'
 
-describe('Bubble sorting', () => {
+describe('bubbleSort', () => {
   it('should return empty array', () => {
     const result = bubbleSort([])
 
