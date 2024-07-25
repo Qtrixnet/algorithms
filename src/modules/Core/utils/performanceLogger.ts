@@ -1,5 +1,5 @@
 interface Params {
-  algorithmName: 'bubble-sort'
+  algorithmName: 'bubble-sort' | 'binary-search'
   array: number[]
   time: number
 }
@@ -15,8 +15,5 @@ const styles = `
 `
 
 export const performanceLogger = ({ algorithmName, time, array }: Params): void => {
-  console.log(
-    `%c ${algorithmName.toUpperCase()}: Время сортировки: ${time.toFixed(10)} мс., Длина массива: ${array.length}`,
-    styles,
-  )
+  console.log(`%c ${algorithmName.toUpperCase()}: Time: ${time} мс., Elements: ${array.length}`, styles)
 }
