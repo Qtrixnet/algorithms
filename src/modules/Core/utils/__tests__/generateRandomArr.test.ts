@@ -1,6 +1,6 @@
 import { generateRandomArr } from '@/modules/Core/utils/generateRandomArr'
 
-describe('generateRandomArr.', () => {
+describe('generateRandomArr', () => {
   it('should generate random array with positive length', () => {
     const result = generateRandomArr(5)
 
