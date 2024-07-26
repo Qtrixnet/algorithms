@@ -3,17 +3,14 @@
 import { useEffect } from 'react'
 
 import { bubbleSort } from '@/modules/Core/alghorithms/bubbleSort'
-import { generateRandomArr } from '@/modules/Core/utils/generateRandomArr'
 import { performanceLogger } from '@/modules/Core/utils/performanceLogger'
 
 interface Props {
-  length: number
+  array: number[]
 }
 
-export const BubbleSort = ({ length }: Props): null => {
+export const BubbleSort = ({ array }: Props): null => {
   useEffect(() => {
-    const array = generateRandomArr(length)
-
     const start = performance.now()
     const result = bubbleSort(array)
     const end = performance.now()
@@ -23,7 +20,7 @@ export const BubbleSort = ({ length }: Props): null => {
       time: end - start,
       array: result,
     })
-  }, [length])
+  }, [array])
 
   return null
 }

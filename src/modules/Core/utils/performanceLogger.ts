@@ -6,6 +6,7 @@ interface Params {
 
 const styles = `
     padding: 8px;
+    margin: 4px 0;
     background-color: white;
     border-radius: 8px;
     color: black;
@@ -14,5 +15,7 @@ const styles = `
 `
 
 export const performanceLogger = ({ algorithmName, time, array }: Params): void => {
-  console.log(`%c ${algorithmName.toUpperCase()}: Time: ${time} мс., Elements: ${array.length}`, styles)
+  setTimeout(() => {
+    console.log(`%c ${algorithmName.toUpperCase()}: Time: ${time} мс., Elements: ${array.length}`, styles)
+  }, 0)
 }
