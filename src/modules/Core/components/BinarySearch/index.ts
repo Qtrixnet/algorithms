@@ -1,1 +1,1 @@
-export { BinarySearch } from './BinarySearch'
+export { default as BinarySearch } from './BinarySearch'

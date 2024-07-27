@@ -1,26 +1,19 @@
-'use client'
-
-import { useEffect } from 'react'
+import { ReactElement } from 'react'
 
 import { bubbleSort } from '@/modules/Core/alghorithms/bubbleSort'
-import { performanceLogger } from '@/modules/Core/utils/performanceLogger'
+import { ResultView } from '@/modules/Core/components/ResultView'
 
 interface Props {
   array: number[]
+  title: string
 }
 
-export const BubbleSort = ({ array }: Props): null => {
-  useEffect(() => {
-    const start = performance.now()
-    const result = bubbleSort(array)
-    const end = performance.now()
+const BubbleSort = ({ array, title }: Props): ReactElement => {
+  const start = performance.now()
+  bubbleSort(array)
+  const end = performance.now()
 
-    performanceLogger({
-      algorithmName: 'bubble-sort',
-      time: end - start,
-      array: result,
-    })
-  }, [array])
-
-  return null
+  return <ResultView elements={array.length} time={end - start} title={title} />
 }
+
+export default BubbleSort

@@ -8,21 +8,18 @@ import { generateUnsortedArr } from '@/modules/Core/utils/generateUnsortedArr'
 
 const homeClassName = cx(
   // Блочная модель
-  'm-auto',
+  'flex flex-col gap-4',
 )
 
-const titleClassName = cx('text-5xl')
-
-const TEST_ARRAY_LENGTH = 20_000
+const TEST_ARRAY_LENGTH = 50_000
 const TEST_ARRAY = generateUnsortedArr(TEST_ARRAY_LENGTH)
 
 const Home = (): ReactElement => {
   return (
     <section className={homeClassName}>
-      <h1 className={titleClassName}>Algorithms</h1>
-      <BubbleSort array={TEST_ARRAY} />
-      <SelectionSort array={TEST_ARRAY} />
-      <BinarySearch array={TEST_ARRAY} />
+      <BubbleSort array={TEST_ARRAY} title='Сортировка пузырьком' />
+      <SelectionSort array={TEST_ARRAY} title='Сортировка выбором' />
+      <BinarySearch array={TEST_ARRAY} title='Бинарный поиск' />
     </section>
   )
 }

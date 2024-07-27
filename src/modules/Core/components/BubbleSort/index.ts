@@ -1,1 +1,1 @@
-export { BubbleSort } from './BubbleSort'
+export { default as BubbleSort } from './BubbleSort'
