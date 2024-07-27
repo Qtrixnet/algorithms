@@ -2,13 +2,9 @@ import { ReactElement } from 'react'
 
 import { selectionSort } from '@/modules/Core/alghorithms/selectionSort'
 import { ResultView } from '@/modules/Core/components/ResultView'
+import { AlgorithmComponentProps } from '@/modules/Core/types/interfaces'
 
-interface Props {
-  array: number[]
-  title: string
-}
-
-const SelectionSort = ({ array, title }: Props): ReactElement => {
+const SelectionSort = ({ array, title }: AlgorithmComponentProps): ReactElement => {
   const start = performance.now()
   selectionSort(array)
   const end = performance.now()

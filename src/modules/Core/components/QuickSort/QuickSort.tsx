@@ -2,13 +2,9 @@ import { ReactElement } from 'react'
 
 import { quickSort } from '@/modules/Core/alghorithms/quickSort'
 import { ResultView } from '@/modules/Core/components/ResultView'
+import { AlgorithmComponentProps } from '@/modules/Core/types/interfaces'
 
-interface Props {
-  array: number[]
-  title: string
-}
-
-const QuickSort = ({ array, title }: Props): ReactElement => {
+const QuickSort = ({ array, title }: AlgorithmComponentProps): ReactElement => {
   const start = performance.now()
   quickSort(array, 0, array.length - 1)
   const end = performance.now()
