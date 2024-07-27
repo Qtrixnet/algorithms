@@ -3,6 +3,7 @@ import { ReactElement } from 'react'
 
 import { BinarySearch } from '@/modules/Core/components/BinarySearch'
 import { BubbleSort } from '@/modules/Core/components/BubbleSort'
+import { InsertionSort } from '@/modules/Core/components/InsertionSort'
 import { QuickSort } from '@/modules/Core/components/QuickSort'
 import { SelectionSort } from '@/modules/Core/components/SelectionSort'
 import { generateUnsortedArr } from '@/modules/Core/utils/generateUnsortedArr'
@@ -32,6 +33,7 @@ const Home = (): ReactElement => {
       <h2 className={titleClassName}>Алгоритмы сортировки</h2>
       <BubbleSort array={TEST_ARRAY} title='Сортировка пузырьком' />
       <SelectionSort array={TEST_ARRAY} title='Сортировка выбором' />
+      <InsertionSort array={TEST_ARRAY} title='Сортировка вставками' />
       <QuickSort array={TEST_ARRAY} title='Быстрая сортировка' />
       <ArrayPrototypeSort array={TEST_ARRAY} title='Array.prototype.sort()' />
       <h2 className={titleClassName}>Алгоритмы поиска</h2>
