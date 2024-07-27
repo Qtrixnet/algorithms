@@ -24,20 +24,20 @@ const titleClassName = cx(
   'font-bold text-xl',
 )
 
-const TEST_ARRAY_LENGTH = 50_000
+const TEST_ARRAY_LENGTH = 10_000
 const TEST_ARRAY = generateUnsortedArr(TEST_ARRAY_LENGTH)
 
 const Home = (): ReactElement => {
   return (
     <section className={homeClassName}>
       <h2 className={titleClassName}>Алгоритмы сортировки</h2>
-      <BubbleSort array={TEST_ARRAY} title='Сортировка пузырьком' />
-      <SelectionSort array={TEST_ARRAY} title='Сортировка выбором' />
-      <InsertionSort array={TEST_ARRAY} title='Сортировка вставками' />
-      <QuickSort array={TEST_ARRAY} title='Быстрая сортировка' />
-      <ArrayPrototypeSort array={TEST_ARRAY} title='Array.prototype.sort()' />
+      <BubbleSort array={[...TEST_ARRAY]} title='Сортировка пузырьком' />
+      <SelectionSort array={[...TEST_ARRAY]} title='Сортировка выбором' />
+      <InsertionSort array={[...TEST_ARRAY]} title='Сортировка вставками' />
+      <QuickSort array={[...TEST_ARRAY]} title='Быстрая сортировка' />
+      <ArrayPrototypeSort array={[...TEST_ARRAY]} title='Array.prototype.sort()' />
       <h2 className={titleClassName}>Алгоритмы поиска</h2>
-      <BinarySearch array={TEST_ARRAY} title='Бинарный поиск' />
+      <BinarySearch array={[...TEST_ARRAY]} title='Бинарный поиск' />
     </section>
   )
 }
