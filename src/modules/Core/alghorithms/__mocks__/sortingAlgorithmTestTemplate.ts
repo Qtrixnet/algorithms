@@ -62,10 +62,10 @@ export const sortingAlgorithmTestTemplate = (sortFunction: SortFunction): void =
   })
 
   it('should handle large arrays correctly', () => {
-    const largeArray = Array.from({ length: 10000 }, (_, i) => 10000 - i)
+    const largeArray = Array.from({ length: 100000 }, (_, i) => 100000 - i)
 
     const result = sortFunction(largeArray)
 
-    expect(result).toEqual(Array.from({ length: 10000 }, (_, i) => i + 1))
+    expect(result).toEqual(Array.from({ length: 100000 }, (_, i) => i + 1))
   })
 }
