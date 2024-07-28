@@ -41,9 +41,9 @@ export const ResultView = ({ elements, title, bigOCase, omegaCase, thetaCase, de
       <div>
         <h3 className={titleClassName}>{title}</h3>
         <div>
-          <p>Лучший случай: Ω({omegaCase.notation}). Когда массив отсортирован</p>
-          <p>Средний случай: Θ({thetaCase.notation}). Для случайного набора данных</p>
-          <p>Худший случай: О({bigOCase.notation}). Когда массив отсортирован в обратном порядке</p>
+          <p>Лучший случай: Ω({omegaCase.notation})</p>
+          <p>Средний случай: Θ({thetaCase.notation})</p>
+          <p>Худший случай: О({bigOCase.notation})</p>
         </div>
         <p>Описание: {description}</p>
       </div>
