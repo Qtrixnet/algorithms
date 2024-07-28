@@ -53,10 +53,18 @@ export const ResultView = ({ elements, title, bigOCase, omegaCase, thetaCase, de
         {description && <p>Использование: {description}</p>}
       </div>
       <div className={timeContainerClassName}>
-        Время работы алгоритма Ω (Лучший случай): <span className={timeClassName}>{omegaCase.time.toFixed(3)} мс.</span>
-        Время работы алгоритма Θ (Средний случай):
-        <span className={timeClassName}>{thetaCase.time.toFixed(3)} мс.</span>
-        Время работы алгоритма О (Худший случай): <span className={timeClassName}>{bigOCase.time.toFixed(3)} мс.</span>
+        <p>
+          Время работы алгоритма Ω (Лучший случай):{' '}
+          <span className={timeClassName}>{omegaCase.time.toFixed(3)} мс.</span>
+        </p>
+        <p>
+          Время работы алгоритма Θ (Средний случай):{' '}
+          <span className={timeClassName}>{thetaCase.time.toFixed(3)} мс.</span>
+        </p>
+        <p>
+          Время работы алгоритма О (Худший случай):{' '}
+          <span className={timeClassName}>{bigOCase.time.toFixed(3)} мс.</span>
+        </p>
       </div>
       <div>Кол-во элементов: {elements.toLocaleString()}</div>
     </div>
