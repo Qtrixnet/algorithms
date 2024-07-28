@@ -2,6 +2,7 @@ import { ReactElement } from 'react'
 
 import { bubbleSort } from '@/modules/Core/alghorithms/bubbleSort'
 import { ResultView } from '@/modules/Core/components/ResultView'
+import { ALGORITHMS_INFO } from '@/modules/Core/constants/algorithms'
 import { AlgorithmComponentProps } from '@/modules/Core/types/interfaces'
 import { measureAlgorithmPerformance } from '@/modules/Core/utils/measureAlgorithmPerformance'
 
@@ -19,16 +20,20 @@ const BubbleSort = ({
     isSearching: false,
   })
 
+  const {
+    title,
+    description,
+    complexity: { bigOCase, thetaCase, omegaCase },
+  } = ALGORITHMS_INFO.sorting.bubbleSorting
+
   return (
     <ResultView
-      bigOCase={{ time: bigOCaseTime, notation: 'n^2' }}
-      description={`наиболее эффективен на уже отсортированных или почти отсортированных массивах, 
-                    но его производительность значительно снижается на больших наборах данных с 
-                    хаотическим расположением элементов.`}
+      bigOCase={{ time: bigOCaseTime, ...bigOCase }}
+      description={description}
       elements={elementsCount}
-      omegaCase={{ time: omegaCaseTime, notation: 'n' }}
-      thetaCase={{ time: thetaCaseTime, notation: 'n^2' }}
-      title='Сортировка пузырьком'
+      omegaCase={{ time: omegaCaseTime, ...omegaCase }}
+      thetaCase={{ time: thetaCaseTime, ...thetaCase }}
+      title={title}
     />
   )
 }

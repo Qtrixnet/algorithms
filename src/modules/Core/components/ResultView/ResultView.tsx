@@ -1,6 +1,8 @@
 import { cx } from 'class-variance-authority'
 import { ReactElement } from 'react'
 
+import { ComplexityNotation } from '@/modules/Core/types/types'
+
 const containerClassName = cx(
   // Блочная модель
   'grid grid-cols-3 gap-8 p-4',
@@ -24,13 +26,6 @@ const timeClassName = cx(
   'text-red-500 font-bold',
 )
 
-type Notations = 'n' | 'log*n' | 'n^2' | '?'
-
-interface ComplexityNotation {
-  notation: Notations
-  time: number
-}
-
 interface Props {
   bigOCase: ComplexityNotation
   description: string
@@ -50,7 +45,7 @@ export const ResultView = ({ elements, title, bigOCase, omegaCase, thetaCase, de
           <p>Средний случай: Θ({thetaCase.notation}). Для случайного набора данных</p>
           <p>Худший случай: О({bigOCase.notation}). Когда массив отсортирован в обратном порядке</p>
         </div>
-        {description && <p>Использование: {description}</p>}
+        <p>Описание: {description}</p>
       </div>
       <div className={timeContainerClassName}>
         <p>
