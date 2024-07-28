@@ -1,12 +1,6 @@
 import { cx } from 'class-variance-authority'
 import { ReactElement } from 'react'
 
-interface Props {
-  elements: number
-  time: number
-  title: string
-}
-
 const containerClassName = cx(
   // Блочная модель
   'grid grid-cols-3 gap-8 p-4',
@@ -15,7 +9,7 @@ const containerClassName = cx(
   'bg-white text-black',
 )
 
-const titleContainer = cx(
+const titleClassName = cx(
   // Оформление
   'font-bold',
 )
@@ -30,12 +24,24 @@ const timeClassName = cx(
   'text-red-500 font-bold',
 )
 
-export const ResultView = ({ elements, time, title }: Props): ReactElement => {
+interface Props {
+  complexity?: string
+  elements: number
+  subtitle?: string
+  time: number
+  title: string
+}
+
+export const ResultView = ({ elements, time, title, complexity, subtitle }: Props): ReactElement => {
   return (
     <div className={containerClassName}>
-      <div className={titleContainer}>{title}</div>
+      <div>
+        <p className={titleClassName}>{title}</p>
+        {complexity && <p>Сложность: {complexity}</p>}
+        {subtitle && <p>Используется: {subtitle}</p>}
+      </div>
       <div className={timeContainerClassName}>
-        Время работы алгоритма: <span className={timeClassName}>{time} мс.</span>
+        Время работы алгоритма: <span className={timeClassName}>{time.toFixed(3)} мс.</span>
       </div>
       <div>Кол-во элементов: {elements.toLocaleString()}</div>
     </div>

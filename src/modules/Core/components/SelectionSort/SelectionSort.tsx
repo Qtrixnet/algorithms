@@ -5,10 +5,18 @@ import { ResultView } from '@/modules/Core/components/ResultView'
 import { AlgorithmComponentProps } from '@/modules/Core/types/interfaces'
 import { measureTime } from '@/modules/Core/utils/measureTime'
 
-const SelectionSort = ({ array, title }: AlgorithmComponentProps): ReactElement => {
+const SelectionSort = ({ array }: AlgorithmComponentProps): ReactElement => {
   const time = measureTime(selectionSort, array)
 
-  return <ResultView elements={array.length} time={time} title={title} />
+  return (
+    <ResultView
+      complexity='O(n^2)'
+      elements={array.length}
+      subtitle='Когда количество входных данных невелико'
+      time={time}
+      title='Сортировка выбором'
+    />
+  )
 }
 
 export default SelectionSort

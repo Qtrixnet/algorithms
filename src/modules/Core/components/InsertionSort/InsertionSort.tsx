@@ -5,10 +5,10 @@ import { ResultView } from '@/modules/Core/components/ResultView'
 import { AlgorithmComponentProps } from '@/modules/Core/types/interfaces'
 import { measureTime } from '@/modules/Core/utils/measureTime'
 
-const InsertionSort = ({ array, title }: AlgorithmComponentProps): ReactElement => {
+const InsertionSort = ({ array }: AlgorithmComponentProps): ReactElement => {
   const time = measureTime(insertionSort, array)
 
-  return <ResultView elements={array.length} time={time} title={title} />
+  return <ResultView elements={array.length} time={time} title='Сортировка вставками' />
 }
 
 export default InsertionSort

@@ -5,10 +5,18 @@ import { ResultView } from '@/modules/Core/components/ResultView'
 import { AlgorithmComponentProps } from '@/modules/Core/types/interfaces'
 import { measureTime } from '@/modules/Core/utils/measureTime'
 
-const BubbleSort = ({ array, title }: AlgorithmComponentProps): ReactElement => {
+const BubbleSort = ({ array }: AlgorithmComponentProps): ReactElement => {
   const time = measureTime(bubbleSort, array)
 
-  return <ResultView elements={array.length} time={time} title={title} />
+  return (
+    <ResultView
+      complexity='O(n^2)'
+      elements={array.length}
+      subtitle='Когда количество входных данных невелико'
+      time={time}
+      title='Сортировка пузырьком'
+    />
+  )
 }
 
 export default BubbleSort
