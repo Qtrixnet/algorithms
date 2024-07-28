@@ -3,7 +3,5 @@ export const measureTime = (sortFunction: (array: number[]) => number[], array: 
 
   sortFunction(array)
 
-  const end = performance.now()
-
-  return end - start
+  return performance.now() - start
 }

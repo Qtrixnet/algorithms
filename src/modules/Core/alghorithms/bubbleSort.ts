@@ -1,3 +1,5 @@
+import { SortingAlgorithm } from '@/modules/Core/types/types'
+
 const swap = (array: number[], i: number, j: number): void => {
   if (array.length <= 1) return
 
@@ -7,7 +9,7 @@ const swap = (array: number[], i: number, j: number): void => {
   array[j] = temp
 }
 
-export const bubbleSort = (array: number[]): number[] => {
+export const bubbleSort: SortingAlgorithm = (array) => {
   let swapped = true
 
   while (swapped) {

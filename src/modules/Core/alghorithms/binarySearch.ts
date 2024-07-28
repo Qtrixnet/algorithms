@@ -1,15 +1,17 @@
-export const binarySearch = (arr: number[], target: number): number | null => {
-  if (arr.length <= 0) return null
+import { SearchingAlgorithm } from '@/modules/Core/types/types'
+
+export const binarySearch: SearchingAlgorithm = (array, target) => {
+  if (array.length <= 0) return null
 
   let left = 0
-  let right = arr.length - 1
+  let right = array.length - 1
 
   while (left <= right) {
     const mid = Math.floor((left + right) / 2)
 
-    if (arr[mid] === target) {
+    if (array[mid] === target) {
       return mid
-    } else if (arr[mid] < target) {
+    } else if (array[mid] < target) {
       left = mid + 1
     } else {
       right = mid - 1

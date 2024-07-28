@@ -3,17 +3,29 @@ import { ReactElement } from 'react'
 import { quickSort } from '@/modules/Core/alghorithms/quickSort'
 import { ResultView } from '@/modules/Core/components/ResultView'
 import { AlgorithmComponentProps } from '@/modules/Core/types/interfaces'
-import { measureTime } from '@/modules/Core/utils/measureTime'
+import { measureAlgorithmPerformance } from '@/modules/Core/utils/measureAlgorithmPerformance'
 
-const QuickSort = ({ array }: AlgorithmComponentProps): ReactElement => {
-  const time = measureTime(quickSort, array)
+const QuickSort = ({
+  sortedArray,
+  randomArray,
+  reverseSortedArray,
+  elementsCount,
+}: AlgorithmComponentProps): ReactElement => {
+  const { bigOCaseTime, omegaCaseTime, thetaCaseTime } = measureAlgorithmPerformance({
+    algorithm: quickSort,
+    randomArray,
+    reverseSortedArray,
+    sortedArray,
+    isSearching: false,
+  })
 
   return (
     <ResultView
-      complexity='O(n * log n) / в худшем случае O(n^2)'
-      elements={array.length}
-      subtitle='При обработке большого объема входных данных / Когда требуется использовать наиболее быстрый алгоритм'
-      time={time}
+      bigOCase={{ time: bigOCaseTime, notation: '?' }}
+      description='?'
+      elements={elementsCount}
+      omegaCase={{ time: omegaCaseTime, notation: '?' }}
+      thetaCase={{ time: thetaCaseTime, notation: '?' }}
       title='Быстрая сортировка'
     />
   )

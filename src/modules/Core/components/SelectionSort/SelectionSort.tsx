@@ -3,17 +3,29 @@ import { ReactElement } from 'react'
 import { selectionSort } from '@/modules/Core/alghorithms/selectionSort'
 import { ResultView } from '@/modules/Core/components/ResultView'
 import { AlgorithmComponentProps } from '@/modules/Core/types/interfaces'
-import { measureTime } from '@/modules/Core/utils/measureTime'
+import { measureAlgorithmPerformance } from '@/modules/Core/utils/measureAlgorithmPerformance'
 
-const SelectionSort = ({ array }: AlgorithmComponentProps): ReactElement => {
-  const time = measureTime(selectionSort, array)
+const SelectionSort = ({
+  sortedArray,
+  randomArray,
+  reverseSortedArray,
+  elementsCount,
+}: AlgorithmComponentProps): ReactElement => {
+  const { bigOCaseTime, omegaCaseTime, thetaCaseTime } = measureAlgorithmPerformance({
+    algorithm: selectionSort,
+    randomArray,
+    reverseSortedArray,
+    sortedArray,
+    isSearching: false,
+  })
 
   return (
     <ResultView
-      complexity='O(n^2)'
-      elements={array.length}
-      subtitle='Когда количество входных данных невелико'
-      time={time}
+      bigOCase={{ time: bigOCaseTime, notation: '?' }}
+      description='?'
+      elements={elementsCount}
+      omegaCase={{ time: omegaCaseTime, notation: '?' }}
+      thetaCase={{ time: thetaCaseTime, notation: '?' }}
       title='Сортировка выбором'
     />
   )

@@ -1,3 +1,6 @@
 export interface AlgorithmComponentProps {
-  array: number[]
+  elementsCount: number
+  randomArray: number[]
+  reverseSortedArray: number[]
+  sortedArray: number[]
 }

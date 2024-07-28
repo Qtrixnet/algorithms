@@ -1,4 +1,6 @@
-export const selectionSort = (array: number[]): number[] => {
+import { SortingAlgorithm } from '@/modules/Core/types/types'
+
+export const selectionSort: SortingAlgorithm = (array) => {
   const { length } = array
 
   if (length <= 1) return array
