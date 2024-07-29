@@ -3,18 +3,17 @@ import { ReactElement } from 'react'
 
 const headerClassName = cx(
   // Блочная модель
-  'p-6',
-  'mobile:p-4',
+  'p-4',
   // Оформление
-  'bg-gradient-to-r from-cyan-500 to-blue-500',
+  'bg-blue-500',
 )
 
 const titleClassName = cx(
   // Оформление
   'text-white text-center',
   // Типографика
-  'text-5xl font-black uppercase',
-  'mobile:text-3xl',
+  'text-3xl font-black uppercase',
+  'mobile:text-2xl',
 )
 
 const Header = (): ReactElement => {

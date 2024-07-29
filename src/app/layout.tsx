@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google'
 import { ReactElement, ReactNode } from 'react'
 
 import { Header } from '@/modules/Core/components/Header'
+import { Navigation } from '@/modules/Core/components/Navigation'
 
 import './globals.css'
 
@@ -31,7 +32,8 @@ const RootLayout = ({
     <html lang='ru'>
       <body className={bodyClassName}>
         <Header />
-        {/*<main>{children}</main>*/}
+        <Navigation />
+        <main>{children}</main>
       </body>
     </html>
   )
