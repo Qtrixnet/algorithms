@@ -1,8 +1,8 @@
 import { cx } from 'class-variance-authority'
 import { ReactElement } from 'react'
 
-import { SearchingAlgorithms } from '@/modules/Core/components/SearchingAlgorithms'
-import { SortingAlgorithms } from '@/modules/Core/components/SortingAlgorithms'
+import { SearchingAlgorithms } from '@/modules/Algorithm/components/SearchingAlgorithms'
+import { SortingAlgorithms } from '@/modules/Algorithm/components/SortingAlgorithms'
 
 const homeClassName = cx(
   // Блочная модель
