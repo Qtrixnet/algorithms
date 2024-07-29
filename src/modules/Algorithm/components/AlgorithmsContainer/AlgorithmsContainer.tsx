@@ -8,6 +8,7 @@ interface Props {
 const containerClassName = cx(
   // Блочная модель
   'grid grid-cols-4 gap-4 p-4 pt-0',
+  'mobile:grid-cols-1',
 )
 
 const AlgorithmsContainer = ({ children }: Props): ReactElement => {
