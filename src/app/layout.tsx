@@ -3,6 +3,8 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { ReactElement, ReactNode } from 'react'
 
+import { Header } from '@/modules/Core/components/Header'
+
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -15,9 +17,9 @@ export const metadata: Metadata = {
 const bodyClassName = cx(
   inter.className,
   // Блочная модель
-  'flex flex-col min-h-dvh',
+  // 'flex flex-col min-h-dvh',
   // Оформление
-  'bg-black text-white',
+  // 'bg-black text-white',
 )
 
 const RootLayout = ({
@@ -27,7 +29,10 @@ const RootLayout = ({
 }>): ReactElement => {
   return (
     <html lang='ru'>
-      <body className={bodyClassName}>{children}</body>
+      <body className={bodyClassName}>
+        <Header />
+        {/*<main>{children}</main>*/}
+      </body>
     </html>
   )
 }
