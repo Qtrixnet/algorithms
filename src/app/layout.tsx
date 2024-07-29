@@ -11,17 +11,11 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Визуализатор алгоритмов сортировки',
-  description: 'Визуализирует работу алгоритмов сортировки',
+  title: 'Algorithms cheat sheet',
+  description: 'Сайт-шпаргалка по алгоритмам. Описывает область применения/сложность алгоритмов',
 }
 
-const bodyClassName = cx(
-  inter.className,
-  // Блочная модель
-  // 'flex flex-col min-h-dvh',
-  // Оформление
-  // 'bg-black text-white',
-)
+const bodyClassName = cx(inter.className)
 
 const RootLayout = ({
   children,

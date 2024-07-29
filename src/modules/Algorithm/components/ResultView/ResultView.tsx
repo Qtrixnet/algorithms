@@ -5,10 +5,10 @@ import { ComplexityNotation } from '@/modules/Algorithm/types/types'
 
 const containerClassName = cx(
   // Блочная модель
-  'grid grid-cols-3 gap-8 p-4',
+  'grid grid-cols-1 gap-8 p-4',
   'mobile:grid-cols-1 mobile:gap-2',
   // Оформление
-  'bg-white text-black',
+  'bg-white text-black border-2 border-blue-500 rounded-xl',
 )
 
 const titleClassName = cx(
