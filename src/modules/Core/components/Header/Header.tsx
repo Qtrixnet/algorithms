@@ -5,12 +5,12 @@ const headerClassName = cx(
   // Блочная модель
   'p-4',
   // Оформление
-  'bg-blue-500',
+  'bg-white text-black',
 )
 
 const titleClassName = cx(
   // Оформление
-  'text-white text-center',
+  'text-center',
   // Типографика
   'text-3xl font-black uppercase',
   'mobile:text-2xl',

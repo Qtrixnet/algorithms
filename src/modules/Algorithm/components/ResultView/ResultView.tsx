@@ -8,7 +8,7 @@ const containerClassName = cx(
   'grid grid-cols-1 gap-8 p-4',
   'mobile:grid-cols-1 mobile:gap-2',
   // Оформление
-  'bg-white text-black border-2 border-blue-500 rounded-xl',
+  'bg-white text-black rounded-xl',
 )
 
 const titleClassName = cx(

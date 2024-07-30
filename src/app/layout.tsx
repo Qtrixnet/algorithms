@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   description: 'Сайт-шпаргалка по алгоритмам. Описывает область применения/сложность алгоритмов',
 }
 
-const bodyClassName = cx(inter.className)
+const bodyClassName = cx(inter.className, 'bg-gray-200')
 
 const RootLayout = ({
   children,
