@@ -1,5 +1,3 @@
-import { log } from 'node:util'
-
 import { SearchingAlgorithm, SortingAlgorithm } from '@/modules/Algorithm/types/types'
 
 type MeasureTime = (algorithm: SortingAlgorithm | SearchingAlgorithm, array: number[], target: number | null) => number
