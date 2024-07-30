@@ -1,3 +1,5 @@
+import { log } from 'node:util'
+
 import { SearchingAlgorithm, SortingAlgorithm } from '@/modules/Algorithm/types/types'
 
 type MeasureTime = (algorithm: SortingAlgorithm | SearchingAlgorithm, array: number[], target: number | null) => number
@@ -11,17 +13,27 @@ function isSearchingAlgorithm(algorithm: SortingAlgorithm | SearchingAlgorithm):
 }
 
 const measureTime: MeasureTime = (algorithm, array, target) => {
-  const start = performance.now()
+  const iterations = 10
+  let totalTime = 0
 
-  if (isSearchingAlgorithm(algorithm) && typeof target === 'number') {
-    algorithm(array, target)
-  } else if (isSortingAlgorithm(algorithm)) {
-    algorithm(array)
-  } else {
-    throw new Error('Invalid algorithm or missing target for searching algorithm')
+  for (let i = 0; i < iterations; i++) {
+    const arrayCopy = [...array]
+
+    const start = performance.now()
+
+    if (typeof target === 'number' && isSearchingAlgorithm(algorithm)) {
+      algorithm(arrayCopy, target)
+    } else if (isSortingAlgorithm(algorithm)) {
+      algorithm(arrayCopy)
+    } else {
+      throw new Error('Invalid algorithm or missing target for searching algorithm')
+    }
+
+    const end = performance.now()
+    totalTime += end - start
   }
 
-  return performance.now() - start
+  return totalTime / iterations
 }
 
 type MeasureAlgorithmPerformanceParams = {
@@ -51,9 +63,9 @@ export const measureAlgorithmPerformance: MeasureAlgorithmPerformance = ({
   reverseSortedArray,
   isSearching,
 }) => {
-  const omegaCaseTime = measureTime(algorithm, sortedArray, isSearching ? 1 : null)
-  const thetaCaseTime = measureTime(algorithm, randomArray, isSearching ? 1 : null)
-  const bigOCaseTime = measureTime(algorithm, reverseSortedArray, isSearching ? 1 : null)
+  const omegaCaseTime = measureTime(algorithm, sortedArray, isSearching ? 1000 : null)
+  const thetaCaseTime = measureTime(algorithm, randomArray, isSearching ? 1000 : null)
+  const bigOCaseTime = measureTime(algorithm, reverseSortedArray, isSearching ? 1000 : null)
 
   return {
     bigOCaseTime,

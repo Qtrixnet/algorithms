@@ -5,7 +5,7 @@ import { generateRandomNumberArray } from '@/modules/Core/utils/generateRandomNu
 import { generateReverseSortedNumberArray } from '@/modules/Core/utils/generateReverseSortedNumberArray'
 import { generateSortedNumberArray } from '@/modules/Core/utils/generateSortedNumberArray'
 
-const ARRAY_LENGTH = 100_000
+const ARRAY_LENGTH = 10_000
 const RANDOM_NUMBER_ARRAY = generateRandomNumberArray(ARRAY_LENGTH)
 const REVERSE_SORTED_NUMBER_ARRAY = generateReverseSortedNumberArray(ARRAY_LENGTH)
 const SORTED_NUMBER_ARRAY = generateSortedNumberArray(ARRAY_LENGTH)

@@ -22,7 +22,7 @@ const linkClassName = cva(
     // Блочная модель
     'px-8 py-3 rounded-lg block',
     // Оформление
-    'bg-white hover:bg-black hover:text-white',
+    'hover:bg-black hover:text-white',
     // Типографика
     'text-center',
   ],
@@ -30,7 +30,7 @@ const linkClassName = cva(
     variants: {
       isActive: {
         true: 'bg-black text-white',
-        false: '',
+        false: 'bg-white text-black',
       },
     },
     defaultVariants: {

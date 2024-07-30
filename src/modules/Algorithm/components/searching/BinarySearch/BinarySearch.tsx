@@ -13,7 +13,7 @@ const BinarySearch = ({
   sortedArray,
 }: AlgorithmComponentProps): ReactElement => {
   randomArray.pop()
-  randomArray.push(100)
+  randomArray.push(1000)
 
   const { bigOCaseTime, omegaCaseTime, thetaCaseTime } = measureAlgorithmPerformance({
     algorithm: binarySearch,

@@ -35,6 +35,8 @@ interface Props {
   title: string
 }
 
+const ACCURACY = 5
+
 export const ResultView = ({ elements, title, bigOCase, omegaCase, thetaCase, description }: Props): ReactElement => {
   return (
     <div className={containerClassName}>
@@ -50,15 +52,15 @@ export const ResultView = ({ elements, title, bigOCase, omegaCase, thetaCase, de
       <div className={timeContainerClassName}>
         <p>
           Время работы алгоритма Ω (Лучший случай):{' '}
-          <span className={timeClassName}>{omegaCase.time.toFixed(3)} мс.</span>
+          <span className={timeClassName}>{omegaCase.time.toFixed(ACCURACY)} мс.</span>
         </p>
         <p>
           Время работы алгоритма Θ (Средний случай):{' '}
-          <span className={timeClassName}>{thetaCase.time.toFixed(3)} мс.</span>
+          <span className={timeClassName}>{thetaCase.time.toFixed(ACCURACY)} мс.</span>
         </p>
         <p>
           Время работы алгоритма О (Худший случай):{' '}
-          <span className={timeClassName}>{bigOCase.time.toFixed(3)} мс.</span>
+          <span className={timeClassName}>{bigOCase.time.toFixed(ACCURACY)} мс.</span>
         </p>
       </div>
       <div>Кол-во элементов: {elements.toLocaleString()}</div>
